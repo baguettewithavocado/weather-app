@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/7ea138bb77.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="src/index.js"></script>
+    <div class="container">
+      <br />
+      <form class="search-form" id="search-form">
+        <div class="input-group mb-3" id="search-form">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Type your city"
+            aria-label="Type your city"
+            aria-describedby="button-addon2"
+            id="text-input"
+          />
+          <input
+            class="btn btn-outline-secondary"
+            type="submit"
+            value="Search"
+            id="button-addon2"
+          />
+        </div>
+      </form>
+      <h1 id="city">Bratislava</h1>
+      <h5 id="current-time">Saturday 21:42</h5>
+      <h5 id="weather-description">Clear</h5>
+
+      <div class="row">
+        <div class="col temperature-now">
+          <i class="fas fa-sun"></i><span id="temperature-now">24</span>°C
+        </div>
+        <div class="col indicators">
+          <div>
+            Humidity
+            <span class="indicators-data"><span id="humidity"> 52</span>%</span>
+          </div>
+          <div>
+            Wind
+            <span class="indicators-data"
+              ><span id="wind-speed"> 11</span> km/h</span
+            >
+          </div>
+          <div>
+            Pressure
+            <span class="indicators-data">
+              <span id="pressure"> 1000</span> Pa</span
+            >
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row week">
+        <div class="col">
+          <div><strong> Sat</strong></div>
+          <div><i class="fas fa-cloud-sun icons"></i></div>
+          <div><strong>24°</strong>12°</div>
+        </div>
+        <div class="col">
+          <div>Sun</div>
+          <div><i class="fas fa-cloud-sun icons"></i></div>
+          <div><strong>23°</strong>11°</div>
+        </div>
+        <div class="col">
+          <div>Mon</div>
+          <div><i class="fas fa-cloud-sun icons"></i></div>
+          <div><strong>25°</strong>15°</div>
+        </div>
+        <div class="col">
+          <div>Tue</div>
+          <div><i class="fas fa-cloud-showers-heavy icons"></i></div>
+          <div><strong>25°</strong>13°</div>
+        </div>
+        <div class="col">
+          <div>Wed</div>
+          <div><i class="fas fa-cloud-showers-heavy icons"></i></div>
+          <div><strong>25°</strong>13°</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

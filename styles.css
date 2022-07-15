@@ -1,0 +1,39 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #3c3b3d;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 50px;
+}
+h5 {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.btn-outline-secondary:hover {
+  background-color: #f75e59bb !important;
+}
+.fa-sun {
+  color: #f75e59bb;
+}
+.indicators {
+  font-size: 14.2px;
+  position: relative;
+  top: 9px;
+  left: 55px;
+}
+.indicators-data {
+  text-align: right;
+}
+.temperature-now {
+  font-size: 55px;
+}
+.icons {
+  font-size: 22px;
+  color: #f75e59bb;
+}
+.week {
+  font-size: 19px;
+}
