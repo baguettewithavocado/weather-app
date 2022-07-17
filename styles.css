@@ -37,3 +37,15 @@ h5 {
 .week {
   font-size: 19px;
 }
+.bottom-text {
+  text-align: center;
+  font-size: 14.2px;
+}
+.github-link {
+  color: #f75e59bb;
+  text-decoration: none;
+}
+.github-link:hover {
+  color: #f75e59bb;
+  text-decoration: underline;
+}
