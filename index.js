@@ -15,6 +15,9 @@ if (hours < 10) {
   hours = `0${hours}`;
 }
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 String(now.getMinutes()).padStart(2, "0");
 currentTime.innerHTML = `${day} ${hours}:${minutes}`;
 
