@@ -15,8 +15,8 @@ h5 {
 .btn-outline-secondary:hover {
   background-color: #f75e59bb !important;
 }
-.fa-sun {
-  color: #f75e59bb;
+#weather-now-icon {
+  width: 60px;
 }
 .indicators {
   font-size: 14.2px;
