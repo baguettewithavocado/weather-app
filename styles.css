@@ -49,3 +49,13 @@ h5 {
   color: #f75e59bb;
   text-decoration: underline;
 }
+.temperature-units {
+  font-size: 20px;
+  position: relative;
+  bottom: 20px;
+  color: #3c3b3d;
+}
+#celsius,
+#fahrenheit {
+  color: #3c3b3d;
+}

@@ -15,7 +15,7 @@
       src="https://kit.fontawesome.com/7ea138bb77.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -56,7 +56,12 @@
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASsAAACpCAMAAABEdevhAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+BsYMAAFjd3WkAAAAAElFTkSuQmCC"
             alt="weather-icon"
           />
-          <span id="temperature-now">24</span>°C
+          <span id="temperature-now">24</span
+          ><span class="temperature-units"
+            >°<a href="f" id="celsius">C</a>|°<a href="f" id="fahrenheit"
+              >F</a
+            ></span
+          >
         </div>
         <div class="col indicators">
           <div>
