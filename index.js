@@ -21,29 +21,49 @@ if (minutes < 10) {
 String(now.getMinutes()).padStart(2, "0");
 currentTime.innerHTML = `${day} ${hours}:${minutes}`;
 
-function displayForecast() {
-  let forecast = document.querySelector("#forecast");
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row week">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
   <div class="col">
     <div>
-      <strong> ${day}</strong>
+      <strong> ${formatDay(forecastDay.dt)}</strong>
     </div>
     <div>
-      <i class="fas fa-cloud-sun icons"></i>
+      <img src="http://openweathermap.org/img/wn/${
+        forecastDay.weather[0].icon
+      }@2x.png" width="50"></img>
     </div>
     <div>
-      <strong>24°</strong>12°
+      <strong>${Math.round(forecastDay.temp.max)}°</strong>${Math.round(
+          forecastDay.temp.min
+        )}°
     </div>
   </div>
 `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
-  forecast.innerHTML = forecastHTML;
+  forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "285cf2395a714706117f6c26a89694b2";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeather(response) {
@@ -64,6 +84,7 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   celsiusTemperature = Math.round(response.data.main.temp);
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -95,5 +116,4 @@ celsiusLink.addEventListener("click", convertToCelsius);
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
-displayForecast();
 search("London");

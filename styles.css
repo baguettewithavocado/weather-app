@@ -13,7 +13,7 @@ h5 {
   margin-bottom: 0;
 }
 .btn-outline-secondary:hover {
-  background-color: #f75e59bb !important;
+  background-color: #3c3b3d !important;
 }
 #weather-now-icon {
   width: 90px;
@@ -42,7 +42,7 @@ h5 {
   font-size: 14.2px;
 }
 .github-link {
-  color: #f75e59bb;
+  color: #ec6e4c;
   text-decoration: none;
 }
 .github-link:hover {
