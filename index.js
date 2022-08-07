@@ -98,22 +98,6 @@ function handleSubmit(event) {
   search(city);
 }
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureNow = document.querySelector("#temperature-now");
-  temperatureNow.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
-}
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureNow = document.querySelector("#temperature-now");
-  temperatureNow.innerHTML = celsiusTemperature;
-}
-let celsiusTemperature = null;
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", convertToCelsius);
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 search("London");
